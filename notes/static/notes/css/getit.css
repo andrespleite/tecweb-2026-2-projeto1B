@@ -295,6 +295,82 @@ body {
   margin-top: 10px;
 }
 
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.card-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background-color: #f7d736;
+  color: #2c2c2c;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card-tag:hover {
+  background-color: #e0af26;
+}
+
+.page-actions {
+  display: flex;
+  gap: 15px;
+  width: 500px;
+  margin-top: 40px;
+}
+
+.tag-page-title {
+  font-family: "Permanent Marker", cursive;
+  font-size: 36px;
+  color: #2c2c2c;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.tag-table-card {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-top: 20px;
+  padding: 25px 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.tag-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tag-table tr:not(:last-child) td {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.tag-table td {
+  padding: 12px 0;
+}
+
+.tag-table-link {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c2c2c;
+  text-decoration: none;
+}
+
+.tag-table-link:hover {
+  color: #e0af26;
+}
+
 /* Você pode usar o CSS comentado abaixo, se ajudar */
 /* Fonte: https://codepen.io/CrisWoler/pen/ogXBLj */
 /* .btn {

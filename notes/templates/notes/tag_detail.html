@@ -9,7 +9,12 @@
 </div>
 
 <main class="container">
-  <h1>{{ tag.title }}</h1>
+  <div class="page-actions">
+    <a class="btn btn-secondary" href="{% url 'index' %}">&larr; Voltar ao início</a>
+    <a class="btn btn-secondary" href="{% url 'tags_list' %}">Todas as tags</a>
+  </div>
+
+  <h1 class="tag-page-title">#{{ tag.title }}</h1>
 
   <div class="card-container">
     {% for note in notes %}
@@ -22,5 +27,7 @@
     {% endfor %}
   </div>
 </main>
+
+<script type="text/javascript" src="{% static 'notes/js/getit.js' %}"></script>
 
 {% endblock %}

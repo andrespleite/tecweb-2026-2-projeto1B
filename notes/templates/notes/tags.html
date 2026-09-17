@@ -9,11 +9,20 @@
 </div>
 
 <main class="container">
-  <ul>
-    {% for tag in tags %}
-      <li><a href="{% url 'tag_detail' tag.id %}">{{ tag.title }}</a></li>
-    {% endfor %}
-  </ul>
+  <div class="page-actions">
+    <a class="btn btn-secondary" href="{% url 'index' %}">&larr; Voltar ao início</a>
+  </div>
+
+  <div class="tag-table-card">
+    <h1 class="tag-page-title">Tags</h1>
+    <table class="tag-table">
+      {% for tag in tags %}
+      <tr>
+        <td><a class="tag-table-link" href="{% url 'tag_detail' tag.id %}">#{{ tag.title }}</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
 </main>
 
 {% endblock %}
