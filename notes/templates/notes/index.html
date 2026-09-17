@@ -13,6 +13,7 @@
     {% csrf_token %}
     <input class="form-card-title" type="text" name="titulo" placeholder="Título" required />
     <textarea class="autoresize" name="detalhes" placeholder="Digite o conteúdo..." required></textarea>
+    <input type="text" name="tags" placeholder="Tags (opcional, separadas por vírgula)" />
     <button class="btn" type="submit">Criar</button>
   </form>
 
@@ -20,21 +21,22 @@
     {% for note in notes %}
     <div class="card">
       <form class="card-edit-form" method="post" action="/editar">
-          <input type="hidden" name="id" value="{id}" />
+          {% csrf_token %}
+          <input type="hidden" name="id" value="{{ note.id }}" />
           <button class="card-edit-btn" type="submit" title="Editar">&#9998;</button>
       </form>
       <form class="card-delete-form" method="post" action="/confirmar-exclusao">
-          <input type="hidden" name="id" value="{id}" />
+          {% csrf_token %}
+          <input type="hidden" name="id" value="{{ note.id }}" />
           <button class="card-delete-btn" type="submit" title="Excluir">&times;</button>
       </form>
       <h3 class="card-title">{{ note.title }}</h3>
       <div class="card-content">
-          <p>{{ note.details }}</p>
+          <p>{{ note.content }}</p>
       </div>
-      <form class="card-favorite-form" method="post" action="/favoritar">
-          <input type="hidden" name="id" value="{id}" />
-          <button class="card-favorite-btn {star_class}" type="submit" title="Favoritar">{star}</button>
-      </form>
+      {% for t in note.tags.all %}
+      <a href="{% url 'tag_detail' t.id %}">{{ t.title }}</a>
+      {% endfor %}
     </div>
     {% endfor %}
   </div>
