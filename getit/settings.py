@@ -82,6 +82,20 @@ DATABASES = {
     )
 }
 
+'''
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'getit',
+        'USER': 'getituser',
+        'PASSWORD': 'getitsenha',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
